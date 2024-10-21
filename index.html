@@ -20,12 +20,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    .videos {
-      text-align: center;
+    .videos .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .video {
-      display: inline-block;
       margin: 10px;
       width: 150px; /* Ancho ajustado para videos pequeños */
     }
@@ -36,9 +37,8 @@
     }
 
     .video-four {
-      display: block;
-      margin: 20px auto; /* Centrar el video 4 */
-      width: 150px; /* Ancho ajustado para videos pequeños */
+      width: 150px; /* Ancho ajustado para el video 4 */
+      margin: 10px auto; /* Centrar el video 4 */
     }
   </style>
 </head>
@@ -113,12 +113,12 @@
           title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
           encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <!-- Video 4 -->
-      <div class="video video-four">
-        <iframe src="https://www.youtube.com/embed/ekO0koy130M" 
-          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-          encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+    </div>
+    <!-- Video 4 centrado -->
+    <div class="video video-four">
+      <iframe src="https://www.youtube.com/embed/ekO0koy130M" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
   <!-- End Personal -->
