@@ -20,22 +20,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    .videos .video {
+    .videos {
+      text-align: center;
+    }
+
+    .video {
       display: inline-block;
       margin: 10px;
-      width: 200px; /* Ancho ajustado para videos pequeños */
+      width: 150px; /* Ancho ajustado para videos pequeños */
     }
 
-    .videos iframe {
-      display: block;
+    .video iframe {
       width: 100%;
-      height: 112px; /* Altura ajustada para videos pequeños */
+      height: 84px; /* Altura ajustada para videos pequeños */
     }
 
-    .videos .container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    .video-four {
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -111,7 +112,7 @@
           encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!-- Video 4 -->
-      <div class="video">
+      <div class="video video-four">
         <iframe src="https://www.youtube.com/embed/ekO0koy130M" 
           title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
           encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
