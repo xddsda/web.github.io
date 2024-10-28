@@ -93,6 +93,78 @@
 
  
 
+<!-- Start Personal -->
+<div class="gallery" id="our-skills">
+  <h2 class="main-title">Personal</h2>
+  <div class="container">
+    <!-- Video 1 -->
+    <div class="box">
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/5MTF-0CZx4g" 
+              title="Ndotz - Embrace It" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- Video 2 -->
+    <div class="box">
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/pRpeEdMmmQ0" 
+              title="Shakira - Waka Waka" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- Video 3 -->
+    <div class="box">
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/4LlXIMcshds" 
+              title="Video no disponible" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- Video 4 -->
+    <div class="box">
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/pRpeEdMmmQ0" 
+              title="Shakira - Waka Waka" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<!-- End Personal -->
+
+<style>
+  body {
+    background-color: #f0f0f0; /* Fondo gris claro */
+  }
+
+  .gallery {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .main-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .box {
+    max-width: 280px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+
+  .box:hover {
+    transform: translateY(-5px);
+  }
+
+  iframe {
+    border-radius: 12px; /* Bordes redondeados para el video */
+    width: 100%;
+    height: 158px;
+  }
+</style>
+
+  
 
   <div class="gallery" id="gallery">
     <h2 class="main-title">Taller</h2>
