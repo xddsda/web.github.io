@@ -91,37 +91,53 @@
   </div>
   <!-- End Landing -->
 
-  <!-- Start Personal -->
+ <!-- Start Personal -->
 <div class="gallery" id="our-skills">
   <h2 class="main-title">Personal</h2>
   <div class="container">
-    <!-- BOX 1 -->
+    <!-- Video 1 -->
     <div class="box">
-      <div class="video">
-        <a href="https://www.youtube.com/watch?v=48lhqX3jpKY" target="_blank">
-          Ver Video 1
-        </a>
-      </div>
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/vqW_z9Gvjx8" 
+              title="Shakira - Hips Don't Lie" frameborder="0" allowfullscreen></iframe>
     </div>
-    <!-- BOX 2 -->
+    <!-- Video 2 -->
     <div class="box">
-      <div class="video">
-        <a href="https://www.youtube.com/watch?v=48lhqX3jpKY" target="_blank">
-          Ver Video 2
-        </a>
-      </div>
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/1COlHGr1BBY" 
+              title="SAIKO - BADGYAL" frameborder="0" allowfullscreen></iframe>
     </div>
-    <!-- BOX 3 -->
+    <!-- Video 3 -->
     <div class="box">
-      <div class="video">
-        <a href="https://www.youtube.com/watch?v=48lhqX3jpKY" target="_blank">
-          Ver Video 3
-        </a>
-      </div>
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/pRpeEdMmmQ0" 
+              title="Shakira - Waka Waka" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- Video 4 -->
+    <div class="box">
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/pRpeEdMmmQ0" 
+              title="Shakira - Waka Waka" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
 <!-- End Personal -->
+
+<style>
+  .gallery {
+    text-align: center;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .box {
+    max-width: 280px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+</style>
 
 
   <div class="gallery" id="gallery">
