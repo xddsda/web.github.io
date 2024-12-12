@@ -20,25 +20,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    .videos .container {
+    .carousel {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .video {
-      margin: 10px;
-      width: 150px; /* Ancho ajustado para videos pequeños */
-    }
-
-    .video iframe {
+      overflow: hidden;
       width: 100%;
-      height: 84px; /* Altura ajustada para videos pequeños */
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .video-four {
-      width: 150px; /* Ancho ajustado para el video 4 */
-      margin: 10px auto; /* Centrar el video 4 */
+    .carousel img {
+      min-width: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .carousel-button {
+      background-color: #FFAA00;
+      border: none;
+      color: white;
+      padding: 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .carousel-button:hover {
+      background-color: #e08e00;
     }
   </style>
 </head>
@@ -54,7 +68,6 @@
         <li><a href="#our-skills">Personal</a></li>
         <li><a href="https://docs.google.com/presentation/d/1l3GGpz7zwPgJMyDMAHIxryovTZm0n98yagobKAQco8k/edit?usp=sharing">Normas Taller</a></li>
         <li><a href="#">Mas Info</a>
-          <!-- Start Megamenu -->
           <div class="megamenu">
             <div class="image">
               <img src="imgs/tecno-removebg-preview.png" alt="">
@@ -68,144 +81,45 @@
               </li>
             </ul>
           </div>
-          <!-- End Megamenu -->
         </li>
       </ul>
     </div>
   </div>
   <!-- End Header -->
 
-  <!-- Start Landing -->
-  <div class="landing">
-    <div class="container">
-      <div class="text">
-        <h1>TECNOLOGIA Y</h1>
-        <p>DIGITALIZACION.</p>
-      </div>
-      <div class="image">
-        <img src="imgs/tecno-removebg-preview.png" alt="">
-      </div>
-    </div>
-    <a href="#our-skills" class="go-down">
-      <i class="fas fa-angle-double-down fa-2x"></i>
-    </a>
+  <!-- Start Carousel -->
+  <div class="carousel" id="carousel">
+    <img src="imgs/gallery-01.png" alt="Image 1">
+    <img src="imgs/gallery-02.png" alt="Image 2">
+    <img src="imgs/gallery-03.jpg" alt="Image 3">
+    <img src="imgs/gallery-04.png" alt="Image 4">
   </div>
-  <!-- End Landing -->
-
- 
-
-<!-- Start Personal -->
-<div class="gallery" id="our-skills">
-  <h2 class="main-title">Personal</h2>
-  <div class="container">
-    <!-- Video 1 -->
-    <div class="box">
-      <iframe width="280" height="158" src="https://www.youtube.com/embed/b4JQYwzF0xY" 
-              title="Ndotz - Embrace It" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <!-- Video 2 -->
-    <div class="box">
-      <iframe width="280" height="158" src="https://www.youtube.com/embed/ekO0koy130M" 
-              title="Frenamos - 🔫 RANDALL13 x WAY B x K9 OG x LILCUBA" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <!-- Video 3 -->
-    <div class="box">
-      <iframe width="280" height="158" src="https://www.youtube.com/embed/jMcV_OP8LSw " 
-                title="Chegou 3 - BR" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <!-- Video 4 -->
-    <div class="box">
-      <iframe width="280" height="158" src="https://www.youtube.com/embed/N4b1K9GBLQ4" 
-              title="Helwa Ya Balady" frameborder="0" allowfullscreen></iframe>
-    </div>
+  <div class="carousel-buttons">
+    <button class="carousel-button" onclick="prevSlide()">Anterior</button>
+    <button class="carousel-button" onclick="nextSlide()">Siguiente</button>
   </div>
-</div>
-<!-- End Personal -->
+  <!-- End Carousel -->
 
-<style>
-  body {
-    background-color: #f0f0f0; /* Fondo gris claro */
-  }
+  <script>
+    let currentSlide = 0;
+    const carousel = document.querySelector('.carousel');
+    const slides = document.querySelectorAll('.carousel img');
 
-  .gallery {
-    text-align: center;
-    padding: 20px;
-  }
+    function showSlide(index) {
+      const offset = -index * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
 
-  .main-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+    function prevSlide() {
+      currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+      showSlide(currentSlide);
+    }
 
-  .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
-    justify-items: center;
-  }
-
-  .box {
-    max-width: 280px;
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-  }
-
-  .box:hover {
-    transform: translateY(-5px);
-  }
-
-  iframe {
-    border-radius: 12px; /* Bordes redondeados para el video */
-    width: 100%;
-    height: 158px;
-  }
-</style>
-
-  
-
-  <div class="gallery" id="gallery">
-    <h2 class="main-title">Taller</h2>
-    <div class="container">
-      <!-- BOX 1 -->
-      <div class="box">
-        <div class="image">
-          <img src="imgs/gallery-01.png" alt="">
-        </div>
-      </div>
-      <!-- BOX 2 -->
-      <div class="box">
-        <div class="image">
-          <img src="imgs/gallery-02.png" alt="">
-        </div>
-      </div>
-      <!-- BOX 3 -->
-      <div class="box">
-        <div class="image">
-          <img src="imgs/gallery-03.jpg" alt="">
-        </div>
-      </div>
-      <!-- BOX 4 -->
-      <div class="box">
-        <div class="image">
-          <img src="imgs/gallery-04.png" alt="">
-        </div>
-      </div>
-      <!-- BOX 5 -->
-      <div class="box">
-        <div class="image">
-          <img src="imgs/gallery-05.jpg" alt="">
-        </div>
-      </div>
-      <!-- BOX 6 -->
-      <div class="box">
-        <div class="image">
-          <img src="imgs/gallery-06.png" alt="">
-        </div>
-      </div>
-
+    function nextSlide() {
+      currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+      showSlide(currentSlide);
+    }
+  </script>
 </body>
+
 </html>
